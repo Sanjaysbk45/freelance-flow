@@ -6,6 +6,20 @@ time tracking, and professional PDF invoicing — into a single app.
 Built with **Node.js + Express + PostgreSQL** (backend) and **React + Vite + Tailwind CSS**
 (frontend), with **Recharts** for the financial dashboard and **PDFKit** for invoice generation.
 
+## Screenshots
+
+| Dashboard | Clients |
+| --- | --- |
+| ![Dashboard with KPIs and revenue chart](docs/screenshots/dashboard.png) | ![Client management](docs/screenshots/clients.png) |
+
+| Projects & burn-rate | Time Tracking |
+| --- | --- |
+| ![Projects with budget burn-rate](docs/screenshots/projects.png) | ![Persistent stopwatch](docs/screenshots/time-tracking.png) |
+
+| Invoicing | FlowBot assistant |
+| --- | --- |
+| ![Invoice list with PDF download](docs/screenshots/invoices.png) | ![FlowBot answering from live data](docs/screenshots/flowbot.png) |
+
 ## Features
 
 | Phase | Feature |
