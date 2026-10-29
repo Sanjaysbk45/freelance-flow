@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #090b14;
+  --lime: #3ef2a0;
+  --sky: #38bdf8;
+  --coral: #fb7185;
+  --violet: #a78bfa;
+  --glass: rgba(255, 255, 255, 0.05);
+  --glass-brd: rgba(255, 255, 255, 0.12);
+}
+
+body {
+  @apply antialiased;
+  color: #e2e8f0;
+  font-family: 'Inter', system-ui, sans-serif;
+  min-height: 100vh;
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(900px 520px at 12% -10%, rgba(56, 189, 248, 0.18), transparent 60%),
+    radial-gradient(820px 480px at 100% 8%, rgba(167, 139, 250, 0.16), transparent 55%),
+    radial-gradient(760px 520px at 50% 120%, rgba(62, 242, 160, 0.1), transparent 55%);
+  background-attachment: fixed;
+}
+
+@layer components {
+  .font-display {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  /* Midnight-neon controls: glassy fills, neon gradients, soft glow + lift. */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold transition-all duration-200;
+  }
+  .btn:active {
+    transform: translateY(0);
+  }
+  .btn-primary {
+    @apply btn text-slate-900;
+    background-image: linear-gradient(135deg, #3ef2a0, #38bdf8);
+    box-shadow: 0 10px 26px -8px rgba(56, 189, 248, 0.65);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.06);
+    box-shadow: 0 14px 32px -8px rgba(56, 189, 248, 0.85);
+  }
+  .btn-accent {
+    @apply btn text-slate-900;
+    background-image: linear-gradient(135deg, #38bdf8, #a78bfa);
+    box-shadow: 0 10px 26px -8px rgba(167, 139, 250, 0.6);
+  }
+  .btn-accent:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.06);
+    box-shadow: 0 14px 32px -8px rgba(167, 139, 250, 0.85);
+  }
+  .btn-ghost {
+    @apply btn text-slate-100;
+    background: var(--glass);
+    border: 1px solid var(--glass-brd);
+    backdrop-filter: blur(8px);
+  }
+  .btn-ghost:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.28);
+  }
+  .btn-danger {
+    @apply btn text-white;
+    background-image: linear-gradient(135deg, #fb7185, #f43f5e);
+    box-shadow: 0 10px 26px -8px rgba(244, 63, 94, 0.55);
+  }
+  .btn-danger:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.06);
+  }
+  .btn-dark {
+    @apply btn text-slate-900;
+    background-image: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+  }
+  .btn-dark:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.04);
+  }
+  .icon-btn {
+    @apply grid h-12 w-12 place-items-center rounded-full text-lg transition-all duration-200;
+    background: var(--glass);
+    border: 1px solid var(--glass-brd);
+    backdrop-filter: blur(8px);
+  }
+  .icon-btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+  }
+  .icon-btn:active {
+    transform: translateY(0);
+  }
+  .card {
+    @apply rounded-2xl p-5;
+    background: rgba(255, 255, 255, 0.045);
+    border: 1px solid var(--glass-brd);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 12px 44px -14px rgba(0, 0, 0, 0.7);
+  }
+  .input {
+    @apply w-full rounded-xl px-3.5 py-2.5 text-sm text-slate-100 outline-none transition-all duration-200;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-brd);
+    color-scheme: dark;
+  }
+  .input::placeholder {
+    color: #64748b;
+  }
+  .input:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
+  }
+  /* Make native <select> dropdown options readable on the dark theme. */
+  .input option {
+    background: #0f172a;
+    color: #e2e8f0;
+  }
+  .label {
+    @apply mb-1 block text-xs font-semibold uppercase tracking-wide text-slate-400;
+  }
+  .badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold;
+  }
+}
